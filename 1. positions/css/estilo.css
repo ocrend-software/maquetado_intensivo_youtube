@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.d {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  float: left;
+}
+
+.d1 {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: red;
+}
+
+.d2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background: blue;
+  left: 0;
+  margin-right: 0;
+}
+
+.d3 {
+  position: absolute;
+  right: 0;
+  background: green;
+}
