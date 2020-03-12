@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 800px;
+  border: 1px solid black;
+  padding: 2px;
+
+  display: flex;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+
+  /*justify-content: center;*/
+  align-items: center;
+}
+
+.d {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.d span {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/** Ordenar elementos individuales **/
+/*
+.d1 {
+  order: 2;
+}
+
+.d2 {
+  order: 1;
+}
+*/
+
+/** Propiedad flex-grow, que controla el espacio que ocupan **/
+/*.d2 {
+  flex-grow: 1;
+}
+
+.d4 {
+  flex-grow: 1;
+}
+
+.d3 {
+  flex-grow: 2;
+}*/
