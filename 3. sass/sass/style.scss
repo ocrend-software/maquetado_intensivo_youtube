@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$black: red;
+$fuentes: Helvetica, sans-serif;
+
+body {
+  background: $black;
+  font-family: $fuentes;
+}
+
+@mixin trasladarIzquierda($propiedad, $color) {
+  border: 1px solid $color;
+  transform: translate($propiedad);
+}
+
+.clase_a {
+  display: block;
+  width: 100%;
+  background: white;
+  padding: 10px;
+
+  .clase_b {
+    width: 100%;
+    display: block;
+    padding: 15px;
+
+    p {
+      color: blue;
+      font-weight: bold;
+      font-size: 30px;
+      cursor: pointer;
+
+      &:hover {
+        color: yellow;
+      }
+    }
+
+    @include trasladarIzquierda(-60px, red);
+  }
+
+  .clase_c {
+    @include trasladarIzquierda(-100px, green);
+  }
+}
