@@ -9,11 +9,24 @@ $red: #ff3946;
 $blue_hover: #1742ce;
 $bold: 700;
 $timer: 0.3s;
+$distancia_en_alto: 85px;
 
 body {
   background-color: white;
   font-family: "Lato", sans-serif;
   color: $blue;
+
+  position: relative;
+
+  .shadow_1 {
+    top: 0;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+    background: url("../img/shadow_1.gif") no-repeat;
+    width: 925px;
+    height: 988px;
+  }
 }
 
 a {
@@ -66,15 +79,103 @@ header {
   > a {
     color: $red;
     padding: 16px 42px;
+    background-color: white;
     box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     transition: all $timer ease-in-out;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > span {
+      margin-right: 16px;
+    }
+
+    > img {
+      transition: all $timer ease-in-out;
+    }
 
     &:hover,
     &:focus {
       background-color: $red;
       color: white;
+
+      > img {
+        filter: brightness(100);
+      }
     }
+  }
+}
+
+.hero {
+  position: relative;
+  margin-top: $distancia_en_alto;
+  width: 100%;
+  height: 987px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .hero_img {
+    z-index: -1;
+    top: 0;
+    right: -277px;
+    position: absolute;
+  }
+
+  .title {
+    max-width: 550px;
+
+    h1 {
+      color: $blue;
+      font-size: 70px;
+    }
+
+    p {
+      margin-top: 50px;
+      display: block;
+      width: 100%;
+      color: #6e757a;
+      font-size: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 50px;
+
+      .btn,
+      .btn-nobg {
+        font-size: 18px;
+      }
+
+      .btn {
+        margin-right: 37px;
+      }
+
+      .btn-nobg {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.btn {
+  color: white;
+  background-color: $red;
+  padding: 15px 36px;
+  text-align: center;
+  border-radius: 25px;
+  transition: all $timer ease-in-out;
+  font-weight: bold;
+  box-shadow: 0px 7px 17px -5px rgba(253, 0, 0, 0.075);
+
+  &:hover,
+  &:focus {
+    color: $red;
+    background-color: white;
+    box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
   }
 }
