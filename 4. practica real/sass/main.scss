@@ -15,7 +15,7 @@ body {
   background-color: white;
   font-family: "Lato", sans-serif;
   color: $blue;
-
+  overflow-x: hidden !important;
   position: relative;
 
   .shadow_1 {
@@ -112,7 +112,7 @@ header {
   position: relative;
   margin-top: $distancia_en_alto;
   width: 100%;
-  height: 987px;
+  min-height: 987px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -160,6 +160,53 @@ header {
       }
     }
   }
+}
+
+.services {
+  width: 100%;
+  min-height: 626px;
+
+  h2 {
+    color: $blue;
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+
+  .title {
+    padding-right: 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .box {
+    min-height: 384px;
+    padding-right: 54px;
+
+    > img {
+      margin-left: 25px;
+      margin-bottom: 65px;
+    }
+
+    > h5 {
+      color: $blue;
+      font-weight: bold;
+      font-size: 33px;
+      margin-bottom: 44px;
+    }
+
+    > p {
+      color: $blue;
+      line-height: 25px;
+    }
+  }
+}
+
+.box {
+  min-height: 349px;
+  padding: 32px 47px;
+  box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
