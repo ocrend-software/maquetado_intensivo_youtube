@@ -27,6 +27,32 @@ body {
     width: 925px;
     height: 988px;
   }
+
+  .shadow_2 {
+    top: 1056px;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    background: url("../img/shadow_2.gif") no-repeat;
+    width: 279px;
+    height: 967px;
+  }
+
+  .shadow_3 {
+    top: 1408px;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+    background: url("../img/shadow_3.gif") no-repeat;
+    width: 337px;
+    height: 859px;
+  }
+}
+
+h2 {
+  color: $blue;
+  font-size: 45px;
+  margin-bottom: 50px;
 }
 
 a {
@@ -83,7 +109,7 @@ header {
     box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     transition: all $timer ease-in-out;
-    font-weight: bold;
+    font-weight: $bold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +182,7 @@ header {
       }
 
       .btn-nobg {
-        font-weight: bold;
+        font-weight: $bold;
       }
     }
   }
@@ -165,12 +191,6 @@ header {
 .services {
   width: 100%;
   min-height: 626px;
-
-  h2 {
-    color: $blue;
-    font-size: 45px;
-    margin-bottom: 50px;
-  }
 
   .title {
     padding-right: 20px;
@@ -183,6 +203,7 @@ header {
   .box {
     min-height: 384px;
     padding-right: 54px;
+    max-width: 320px;
 
     > img {
       margin-left: 25px;
@@ -191,7 +212,7 @@ header {
 
     > h5 {
       color: $blue;
-      font-weight: bold;
+      font-weight: $bold;
       font-size: 33px;
       margin-bottom: 44px;
     }
@@ -202,8 +223,62 @@ header {
     }
   }
 }
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    margin-right: 70px;
+  }
+
+  .title {
+    .mini-title {
+      color: $red;
+      text-transform: uppercase;
+      font-size: 18px;
+      display: block;
+      width: 100%;
+      font-weight: $bold;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      max-width: 350px;
+    }
+
+    p {
+      color: $blue;
+      font-size: 15px;
+      display: block;
+      width: 100%;
+      margin-bottom: 57px;
+    }
+
+    .arrows {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all $timer ease-in-out;
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+
+      .left {
+        margin-right: 55px;
+      }
+    }
+  }
+}
 
 .box {
+  background: white;
   min-height: 349px;
   padding: 32px 47px;
   box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
@@ -216,7 +291,7 @@ header {
   text-align: center;
   border-radius: 25px;
   transition: all $timer ease-in-out;
-  font-weight: bold;
+  font-weight: $bold;
   box-shadow: 0px 7px 17px -5px rgba(253, 0, 0, 0.075);
 
   &:hover,
