@@ -6,6 +6,7 @@
 
 $blue: #314584;
 $red: #ff3946;
+$red_hover: #ff858d;
 $blue_hover: #1742ce;
 $bold: 700;
 $timer: 0.3s;
@@ -46,6 +47,16 @@ body {
     background: url("../img/shadow_3.gif") no-repeat;
     width: 337px;
     height: 859px;
+  }
+
+  .shadow_4 {
+    top: 2391px;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    background: url("../img/shadow_4.gif") no-repeat;
+    width: 925px;
+    height: 904px;
   }
 }
 
@@ -226,7 +237,8 @@ header {
 .about {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 560px;
 
   > img {
     margin-right: 70px;
@@ -254,26 +266,96 @@ header {
       width: 100%;
       margin-bottom: 57px;
     }
+  }
+}
+
+.portfolio {
+  min-height: 999px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h2 {
+      width: 350px;
+      margin-bottom: 0;
+    }
 
     .arrows {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      img {
-        cursor: pointer;
-        opacity: 0.6;
-        transition: all $timer ease-in-out;
-        &:hover,
-        &:focus {
-          opacity: 1;
-        }
-      }
-
       .left {
-        margin-right: 55px;
+        margin-right: 26px;
       }
     }
+  }
+
+  .row {
+    margin-top: 87px;
+
+    .img_box {
+      position: relative;
+      background-color: #c3d0d8;
+      width: 100%;
+      height: 280px;
+      margin-bottom: 17px;
+      background-position: center center;
+      background-size: 100%;
+      cursor: pointer;
+      transition: all $timer ease-in-out;
+
+      &::after {
+        position: absolute;
+        content: "";
+        background-color: black;
+        opacity: 0.6;
+        width: 100%;
+        height: 100%;
+        transition: all $timer ease-in-out;
+      }
+
+      &:hover,
+      &:focus {
+        background-size: 150%;
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  > a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 55px;
+    color: $red;
+    font-weight: $bold;
+
+    &:hover,
+    &:focus {
+      color: $red_hover;
+    }
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all $timer ease-in-out;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .left {
+    margin-right: 55px;
   }
 }
 
