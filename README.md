@@ -12,4 +12,4 @@
 
 ## RECURSOS
 
-https://github.com/ocrend-software/maquetado_web_intensivo_youtube
+https://github.com/ocrend-software/maquetado_intensivo_youtube

@@ -12,6 +12,15 @@ $bold: 700;
 $timer: 0.3s;
 $distancia_en_alto: 85px;
 
+@mixin shadow_settings($top, $url_img, $w, $h) {
+  top: $top;
+  z-index: -1;
+  position: absolute;
+  background: url($url_img) no-repeat;
+  width: $w;
+  height: $h;
+}
+
 body {
   background-color: white;
   font-family: "Lato", sans-serif;
@@ -20,43 +29,28 @@ body {
   position: relative;
 
   .shadow_1 {
-    top: 0;
+    @include shadow_settings(0, "../img/shadow_1.gif", 925px, 988px);
     right: 0;
-    z-index: -1;
-    position: absolute;
-    background: url("../img/shadow_1.gif") no-repeat;
-    width: 925px;
-    height: 988px;
   }
 
   .shadow_2 {
-    top: 1056px;
+    @include shadow_settings(1056px, "../img/shadow_2.gif", 279px, 967px);
     left: 0;
-    z-index: -1;
-    position: absolute;
-    background: url("../img/shadow_2.gif") no-repeat;
-    width: 279px;
-    height: 967px;
   }
 
   .shadow_3 {
-    top: 1408px;
+    @include shadow_settings(1408px, "../img/shadow_3.gif", 337px, 859px);
     right: 0;
-    z-index: -1;
-    position: absolute;
-    background: url("../img/shadow_3.gif") no-repeat;
-    width: 337px;
-    height: 859px;
   }
 
   .shadow_4 {
-    top: 2391px;
+    @include shadow_settings(2391px, "../img/shadow_4.gif", 925px, 904px);
     left: 0;
-    z-index: -1;
-    position: absolute;
-    background: url("../img/shadow_4.gif") no-repeat;
-    width: 925px;
-    height: 904px;
+  }
+
+  .shadow_5 {
+    @include shadow_settings(3460px, "../img/shadow_5.gif", 418px, 667px);
+    right: 0;
   }
 }
 
@@ -245,16 +239,6 @@ header {
   }
 
   .title {
-    .mini-title {
-      color: $red;
-      text-transform: uppercase;
-      font-size: 18px;
-      display: block;
-      width: 100%;
-      font-weight: $bold;
-      margin-bottom: 35px;
-    }
-
     h2 {
       max-width: 350px;
     }
@@ -269,9 +253,8 @@ header {
   }
 }
 
-.portfolio {
-  min-height: 999px;
-
+.portfolio,
+.blog {
   .title {
     display: flex;
     justify-content: space-between;
@@ -288,6 +271,20 @@ header {
       }
     }
   }
+}
+
+.mini-title {
+  color: $red;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  font-weight: $bold;
+  margin-bottom: 35px;
+}
+
+.portfolio {
+  min-height: 1010px;
 
   .row {
     margin-top: 87px;
@@ -339,6 +336,57 @@ header {
   }
 }
 
+.blog {
+  min-height: 683px;
+
+  .title {
+    margin-bottom: 78px;
+
+    .mini-title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .box {
+    position: relative;
+    max-width: 360px;
+    padding: 47px;
+    transition: background-color $timer ease-in-out;
+
+    h6 {
+      font-weight: $bold;
+      font-size: 17px;
+      color: $blue;
+    }
+
+    small {
+      margin-top: 10px;
+      margin-bottom: 40px;
+      display: block;
+      width: 100%;
+      color: #6e757a;
+    }
+
+    p {
+      font-size: 18px;
+      color: $blue;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 47px;
+      right: 37px;
+    }
+
+    h6,
+    small,
+    p,
+    .arrow {
+      transition: color $timer ease-in-out;
+    }
+  }
+}
+
 .arrows {
   display: flex;
   justify-content: flex-start;
@@ -364,6 +412,29 @@ header {
   min-height: 349px;
   padding: 32px 47px;
   box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.1);
+
+  &.with_hover {
+    &:hover,
+    &:focus,
+    &.active {
+      background: $red;
+
+      p,
+      small,
+      h1,
+      h2,
+      h3,
+      h5,
+      h4,
+      h6 {
+        color: white !important;
+      }
+
+      .arrow {
+        filter: brightness(100);
+      }
+    }
+  }
 }
 
 .btn {
